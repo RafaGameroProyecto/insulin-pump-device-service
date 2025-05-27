@@ -1,4 +1,3 @@
-
 package com.insulinpump.deviceservice.integration;
 
 import com.insulinpump.deviceservice.client.PatientClient;
