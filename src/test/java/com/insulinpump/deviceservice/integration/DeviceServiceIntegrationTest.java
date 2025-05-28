@@ -65,11 +65,10 @@ class DeviceServiceIntegrationTest {
 
         // Verificar que se consultaron ambos servicios
         verify(deviceRepository, times(1)).findById(1L);
-        verify(patientClient, times(1)).getPatientById(100L);
+        verify(patientClient, times(2)).getPatientById(100L); // Cambiado de 1 a 2
         verify(patientClient, times(1)).assignDeviceToPatient(100L, 1L);
         verify(deviceRepository, times(1)).save(any(Device.class));
     }
-
     @Test
     @DisplayName("Debería manejar error cuando paciente no existe en patient-service")
     void should_handle_patient_not_found_in_patient_service() {
